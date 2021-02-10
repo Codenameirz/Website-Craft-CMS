@@ -1,0 +1,40 @@
+fieldLayouts:
+  51377ad2-0e03-4519-ad27-b0ee4f82bffd:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\TitleField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+handle: perspective
+name: Perspective
+siteSettings:
+  b36c8447-b853-4927-84df-8ff556c38632:
+    hasUrls: true
+    template: games\index
+    uriFormat: 'games?perspective={slug}'
+structure:
+  maxLevels: null
+  uid: 291a2a85-4cc7-4089-9f1e-0810a205fc6f

@@ -1,0 +1,19 @@
+{% set home = currentSite.baseUrl %}
+
+{%
+  set navbar =[
+    {'page': 'Home', 'url': home},
+    {'page': 'Games', 'url': home~'games'},
+  ]
+%}
+
+<!--Navbar start-->
+<nav class="flex flex-row w-full items-center justify-between p-3 fixed" style="background-color: #212121;">
+  <a class="text-white text-lg font-bold mx-4 py-2 transform hover:scale-125 transition duration-500" href="">infoGames</a>
+  <ul class="flex flex-row text-gray-400 md:text-white">
+  {% for item in navbar %}
+    <a class="" href="{{ item.url }}"><li class="mx-4">{{ item.page }}</li></a>
+  {% endfor %}
+  </ul>
+</nav>
+<!--Navbar end-->

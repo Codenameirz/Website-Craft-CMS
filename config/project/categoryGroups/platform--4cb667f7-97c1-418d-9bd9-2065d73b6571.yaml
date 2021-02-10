@@ -1,0 +1,40 @@
+fieldLayouts:
+  622228f5-8778-4148-aef4-a84a6f33b201:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\TitleField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+handle: platform
+name: Platform
+siteSettings:
+  b36c8447-b853-4927-84df-8ff556c38632:
+    hasUrls: true
+    template: games\index
+    uriFormat: 'game?platform={slug}'
+structure:
+  maxLevels: null
+  uid: 396807f0-c3d3-42de-becb-3052bd8051ee

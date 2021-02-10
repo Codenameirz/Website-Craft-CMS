@@ -1,0 +1,23 @@
+contentColumnType: string
+fieldGroup: 952af045-3f72-4b08-9298-13041d9e60a8
+handle: gameMode
+instructions: ''
+name: 'Game Mode'
+searchable: false
+settings:
+  allowLimit: false
+  allowMultipleSources: false
+  allowSelfRelations: false
+  branchLimit: ''
+  limit: null
+  localizeRelations: false
+  selectionLabel: ''
+  showSiteMenu: false
+  source: 'group:94d93e2c-5e4b-41ac-9b2c-d9de9f99bd8d'
+  sources: '*'
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Categories

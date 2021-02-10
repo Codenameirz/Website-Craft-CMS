@@ -1,0 +1,23 @@
+contentColumnType: string
+fieldGroup: 952af045-3f72-4b08-9298-13041d9e60a8
+handle: gameEngine
+instructions: ''
+name: 'Game Engine'
+searchable: false
+settings:
+  allowLimit: false
+  allowMultipleSources: false
+  allowSelfRelations: false
+  branchLimit: ''
+  limit: null
+  localizeRelations: false
+  selectionLabel: ''
+  showSiteMenu: false
+  source: 'group:a5cc17f5-3176-451f-a2e0-49c483dfda33'
+  sources: '*'
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Categories

@@ -1,0 +1,23 @@
+contentColumnType: string
+fieldGroup: 952af045-3f72-4b08-9298-13041d9e60a8
+handle: gameCompany
+instructions: ''
+name: 'Game Company'
+searchable: false
+settings:
+  allowLimit: false
+  allowMultipleSources: false
+  allowSelfRelations: false
+  branchLimit: ''
+  limit: null
+  localizeRelations: false
+  selectionLabel: ''
+  showSiteMenu: true
+  source: 'group:8e5d716e-f3b0-4055-a394-b967977ffd56'
+  sources: '*'
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Categories

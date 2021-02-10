@@ -1,0 +1,15 @@
+contentColumnType: datetime
+fieldGroup: 952af045-3f72-4b08-9298-13041d9e60a8
+handle: releaseDate
+instructions: ''
+name: 'Release Date'
+searchable: false
+settings:
+  max: null
+  min: null
+  minuteIncrement: '30'
+  showDate: true
+  showTime: false
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Date

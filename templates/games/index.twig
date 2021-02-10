@@ -1,0 +1,18 @@
+{% extends 'layout/_base_layout.twig' %}
+
+{% set contentGames = craft.entries.section('games') %}
+
+{% block content %}
+
+  <div class="grid md:grid-cols-3 h-screen w-11/12 items-center justify-center m-auto md:gap-x-6 lg:gap-x-12 gap-y-4 py-12">
+    {% for item in contentGames %}
+    <a class="group" href="{{ item.url }}">
+      <div class="box-content h-auto w-full m-auto">
+        <img class="w-full h-full" src="{{ item.coverImage.one().url }}" alt="">
+        <h1>{{ item.title }}</h1>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+
+{% endblock %}

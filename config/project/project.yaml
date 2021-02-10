@@ -1,0 +1,27 @@
+dateModified: 1612969295
+email:
+  fromEmail: purwantoharis499@gmail.com
+  fromName: 'Website Craft CMS'
+  transportType: craft\mail\transportadapters\Sendmail
+plugins:
+  redactor:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.3.0
+  super-table:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.2.1
+system:
+  edition: solo
+  live: true
+  name: 'Website Craft CMS'
+  retryDuration: null
+  schemaVersion: 3.6.1
+  timeZone: Asia/Jakarta
+users:
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoSubpath: null
+  photoVolumeUid: null
+  requireEmailVerification: true
