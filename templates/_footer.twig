@@ -8,7 +8,7 @@
 %}
 
 <!--Footer start-->
-<footer class="w-full h-auto" style="background-color: #212121;">
+<footer class="w-full h-auto mt-auto" style="background-color: #111111;">
   <div class="grid md:grid-cols-3 w-11/12 gap-x-12 gap-y-4 m-auto pt-4 pb-8">
     <div class="box-content bg-transparent text-white">
       <h1 class="font-bold md:text-lg border-b-2 pb-2">About</h1>
@@ -18,7 +18,7 @@
       <h1 class="font-bold md:text-lg border-b-2 pb-2">Menu</h1>
       <ul class="pt-2">
       {% for item in menuFooter %}
-        <li><a class="hover:underline" href="{{ item.link }}">{{ item.menu }}</a></li>
+        <li class="text-white"><a class="text-sm md:text-base hover:text-gray-400 hover:underline" href="{{ item.link }}">{{ item.menu }}</a></li>
       {% endfor %}
       </ul>
     </div>

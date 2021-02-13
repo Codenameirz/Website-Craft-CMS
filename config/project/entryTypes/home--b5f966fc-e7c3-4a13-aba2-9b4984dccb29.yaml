@@ -11,7 +11,7 @@ fieldLayouts:
             disabled: false
             id: null
             instructions: ''
-            label: __blank__
+            label: ''
             max: null
             min: null
             name: null
@@ -27,6 +27,15 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            fieldUid: 06cbb18f-83ad-4d0c-82c5-5e5716611890
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
             fieldUid: fa107f63-5bd7-4f68-9c5b-b70158f091e4
             instructions: null
             label: null
@@ -38,7 +47,7 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 handle: home
-hasTitleField: false
+hasTitleField: true
 name: Home
 section: 33513993-7de6-4172-9981-b0ecb77c5b5a
 sortOrder: 1
