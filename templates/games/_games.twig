@@ -2,8 +2,64 @@
 
 {% block content %}
 
-  <div class="h-screen">
-    <div class="w-10/12 h-4/5 m-auto bg-gray-700 items-center justify-center"></div>
+  <div class="py-24">
+    <div class="flex flex-col h-screen w-11/12 rounded-2xl m-auto py-12 px-12" style="background-color: #212121;">
+      <div class="grid md:grid-cols-3 justify-center md:justify-between">
+        <div class="col-span-1 m-auto">
+          <img class="w-11/12 h-auto justify-center m-auto" src="{{ entry.coverImage.one().url }}" alt="">
+        </div>
+        <div class="col-span-2">
+
+          <h1 class="text-white text-2xl font-bold">{{ entry.title }} ({{ entry.releaseGame|date("Y")}})</h1>
+
+          <h2 class="text-xl py-2">Tanggal Rilis : {{ entry.releaseGame|date("d M Y") }}</h2>
+
+          <h2 class="text-xl py-2 font-bold">Developer : 
+            {% for item in entry.developer.all() %}
+              <a class="px-2 py-1 border-2 font-normal rounded-md text-white text-sm border-white hover:bg-white hover:text-black" href="{{ item.url }}"> {{ item }}</a>
+            {% endfor %}
+          </h2>
+
+          <h2 class="text-xl py-2 font-bold">Publisher : 
+            {% for item in entry.publisher.all() %}
+              <a class="px-2 py-1 border-2 font-normal rounded-md text-white text-sm border-white hover:bg-white hover:text-black" href="{{ item.url }}"> {{ item }}</a>
+            {% endfor %}
+          </h2>
+
+          <h2 class="text-xl py-2 font-bold">Genre : 
+            {% for item in entry.genre.all() %}
+              <a class="px-2 py-1 border-2 font-normal rounded-md text-white text-sm border-white hover:bg-white hover:text-black" href="{{ item.url }}"> {{ item }}</a>
+            {% endfor %}
+          </h2>
+
+          <h2 class="text-xl py-2 font-bold">Mode : 
+            {% for item in entry.mode.all() %}
+              <a class="px-2 py-1 border-2 font-normal rounded-md text-white text-sm border-white hover:bg-white hover:text-black" href="{{ item.url }}"> {{ item }}</a>
+            {% endfor %}
+          </h2>
+
+          <h2 class="text-xl py-2 font-bold">Perspective : 
+            {% for item in entry.perspective.all() %}
+              <a class="px-2 py-1 border-2 font-normal rounded-md text-white text-sm border-white hover:bg-white hover:text-black" href="{{ item.url }}"> {{ item }}</a>
+            {% endfor %}
+          </h2>
+
+          <h2 class="text-xl py-2 font-bold">Engine : 
+            {% for item in entry.engine.all() %}
+              <a class="px-2 py-1 border-2 font-normal rounded-md text-white text-sm border-white hover:bg-white hover:text-black" href="{{ item.url }}"> {{ item }}</a>
+            {% endfor %}
+          </h2>
+
+          <h2 class="text-xl py-2 font-bold">Platform : 
+            {% for item in entry.platform.all() %}
+              <a class="px-2 py-1 border-2 font-normal rounded-md text-white text-sm border-white hover:bg-white hover:text-black" href="{{ item.url }}"> {{ item }}</a>
+            {% endfor %}
+          </h2>
+
+        </div>
+      </div>
+      <div class="box-content w-full h-24 bg-white m-auto"></div>
+    </div>
   </div>
 
 {% endblock %}

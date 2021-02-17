@@ -1,0 +1,49 @@
+fieldLayouts:
+  7f45910d-03f8-4287-a0a0-012bf2706016:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: a6181452-d5b6-4362-845c-e396f15c3e12
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: c77250e2-c5a3-4896-94e7-c1d3ba596bd1
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 1d63de34-12a0-4de6-80c3-e6e3a6427b7f
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: findMe
+        sortOrder: 1
+      -
+        elements:
+          -
+            fieldUid: fa107f63-5bd7-4f68-9c5b-b70158f091e4
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: About
+        sortOrder: 2
+handle: footer
+name: Footer

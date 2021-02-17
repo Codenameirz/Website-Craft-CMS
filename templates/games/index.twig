@@ -1,19 +1,59 @@
 {% extends 'layout/_base_layout.twig' %}
 
-{% set contentGames = craft.entries.section('games').all() %}
+{% set classPagination = "px-4 py-2 border-2 border-white font-bold text-white rounded-md m-auto hover:bg-white hover:text-black transition duration-500" %}
+
+{% set searchQuery = craft.app.request.getQueryParam('search') %}
+
+{% set category = craft.app.request.getQueryParam('allCategory') %}
+
+{% set allCategory = null %}
+
+{% set query = craft.entries()
+  .section('games')
+  .relatedTo(allCategory)
+  .search(searchQuery)
+  .limit(3)
+%}
 
 {% block content %}
-  
-  <div class="grid md:grid-cols-3 w-11/12 md:gap-x-12 gap-y-1 py-3 items-center justify-between h-screen m-auto">
-    {% for content in contentGames %}
-    <div class="boxx group box-content m-auto">
-      <a href="{{ content.url }}">
-        <img class="opacity-50 group-hover:opacity-100" src="{{ content.coverImage.one().url }}" alt="">
-      </a>
-    </div>
-    {% endfor %}
-  </div>
 
-  <div></div>
+  {% if query|length %}
+
+  <div class="py-24">
+    <div class="flex flex-col w-11/12 h-full m-auto rounded-2xl py-8" style="background-color: #212121;">
+
+      {% if searchQuery is not empty %}
+        <h1 class="text-white font-bold text-xl m-auto">Menampilkan hasil pencarian dari "{{ searchQuery }}"</h1>
+      {% endif %}
+      
+      <div class="grid md:grid-cols-3 w-11/12 gap-x-8 gap-y-16 py-12 items-center justify-center md:justify-between m-auto">
+
+
+        {% for content in query %}
+          {% include 'components/_cover.twig' %}
+        {% endfor %}
+
+      </div>
+
+      <div class="space-x-4 m-auto">
+        <a class="{{ classPagination }}" href=""><i class="las la-angle-double-left"></i></a>
+        <a class="{{ classPagination }}" href="">1</a>
+        <a class="{{ classPagination }}" href="">2</a>
+        <a class="{{ classPagination }}" href=""><i class="las la-angle-double-right"></i></a>
+      </div>
+
+    </div>
+  </div>
+  
+  {% else %}
+
+  <div class="py-24">
+    <div class="flex flex-col w-11/12 h-screen m-auto rounded-2xl items-center justify-center m-auto" style="background-color: #212121;">
+      <h1 class="text-white text-center w-11/12 text-lg md:text-3xl font-bold pb-8">Tidak ada data yang cocok dengan "{{ searchQuery }}"</h1>
+      <a class="bg-red-500 text-white px-4 md:px-8 py-2 md:py-4 rounded-md border-2 border-red-500 hover:bg-transparent hover:text-red-500 transition duration-300" href="{{ base }}">Kembali ke halaman utama</a>
+    </div>
+  </div>
+  
+  {% endif %}
 
 {% endblock %}

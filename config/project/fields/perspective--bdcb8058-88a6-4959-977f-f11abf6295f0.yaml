@@ -1,8 +1,8 @@
 contentColumnType: string
 fieldGroup: 952af045-3f72-4b08-9298-13041d9e60a8
-handle: gamePerspective
+handle: perspective
 instructions: ''
-name: 'Game Perspective'
+name: Perspective
 searchable: false
 settings:
   allowLimit: false
@@ -12,7 +12,7 @@ settings:
   limit: null
   localizeRelations: false
   selectionLabel: ''
-  showSiteMenu: false
+  showSiteMenu: true
   source: 'group:1fc0a1ba-5f9f-4c61-894a-0d47939ed000'
   sources: '*'
   targetSiteId: null

@@ -1,28 +1,27 @@
 {% extends 'layout/_base_layout.twig' %}
 
-{% set contentGames = craft.entries.section('games').limit(3) %}
+{% set contentGames = craft.entries.section('games').order('releaseGame desc').limit(3)%}
 
 {% block content %}
 
-  
-  <div class="h-full">
-    <div class="flex flex-col h-screen w-full bg-center bg-cover bg-no-repeat items-center justify-center m-auto" style="background-image: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.5)), url({{ entry.coverImage.one().url }});">
+<div class="h-full">
+  <div class="flex flex-col h-screen w-full bg-center bg-cover bg-no-repeat items-center justify-center m-auto" style="background-image: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.5)), url({{ entry.coverImage.one().url }});">
       <div class="w-10/12 md:w-3/5">
         <h1 class="text-white text-2xl md:text-4xl text-center font-bold m-auto">{{ entry.title }}</h1>
         <div class="text-white text-center m-auto py-4">{{ entry.richText }}</div>
 
         <!--Search bar-->
-          <form class="relative m-auto" action="{{ url('games') }}">
+        <form class="relative m-auto" action="{{ url('games') }}">
             <input class="w-10/12 md:w-11/12 h-10 md:h-12 text-black placeholder-black placeholder-opacity-40 pl-4 rounded-l-lg focus:outline-none" type="text" name="search" placeholder="Cari nama game..." required>
-            <button class="absolute top-0 w-2/12 md:w-1/12 h-10 md:h-12 bg-white text-black hover:bg-gray-600 hover:text-white rounded-r-lg focus:outline-none transition duration-500" type="submit" name="submit"><i class="las la-search"></i></button>
+            <button class="absolute top-0 w-2/12 md:w-1/12 h-10 md:h-12 bg-white text-black hover:bg-gray-600 hover:text-white rounded-r-lg focus:outline-none transition duration-500" type="submit"><i class="las la-search"></i></button>
           </form>
         <!--End Search bar-->
-
+        
         </div>
-    </div>
-
-    <div class="h-full py-16">
-      <div class="w-11/12 m-auto rounded-2xl" style="background-color: #212121;">
+      </div>
+      
+    <div class="py-16">
+      <div class="flex flex-col w-11/12 h-auto m-auto rounded-2xl py-8" style="background-color: #212121;">
         <h1 class="text-center text-white text-xl md:text-2xl font-bold m-auto pt-16 pb-3">Game yang sedang trend</h1>
         <div class="w-6/12 sm:w-4/12 md:w-3/12 lg:w-2/12 border-2 border-white m-auto"></div>
         <p class="text-center w-11/12 text-white text-sm md:text-lg m-auto py-4">Berikut ini adalah beberapa game baru saja dirilis dan sedang trend dikalangan para gamers.</p>
@@ -32,6 +31,8 @@
             {% include 'components/_cover.twig' %}
           {% endfor %}
         </div>
+
+        <a class="px-12 py-3 text-xl text-center text-white text-opacity-40 hover:text-opacity-100 font-bold m-auto rounded-full transform hover:scale-110 transition duration-300 focus:outline-none" style="background-color: #414141;" href="{{ base~'games' }}">Lihat lainnya   <i class="las la-angle-double-right"></i></a>
 
       </div>
     </div>

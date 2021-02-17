@@ -1,8 +1,8 @@
 contentColumnType: string
 fieldGroup: 952af045-3f72-4b08-9298-13041d9e60a8
-handle: gamePlatform
+handle: genre
 instructions: ''
-name: 'Game Platform'
+name: Genre
 searchable: false
 settings:
   allowLimit: false
@@ -12,8 +12,8 @@ settings:
   limit: null
   localizeRelations: false
   selectionLabel: ''
-  showSiteMenu: false
-  source: 'group:4cb667f7-97c1-418d-9bd9-2065d73b6571'
+  showSiteMenu: true
+  source: 'group:e293e486-1e0b-49a9-91cf-ead640a49d15'
   sources: '*'
   targetSiteId: null
   validateRelatedElements: false

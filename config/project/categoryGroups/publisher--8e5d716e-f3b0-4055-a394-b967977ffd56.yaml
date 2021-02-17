@@ -1,5 +1,5 @@
 fieldLayouts:
-  ce478576-5a57-438c-866e-9464bb735e6e:
+  23648934-785b-425f-9f22-5366fb059450:
     tabs:
       -
         elements:
@@ -28,13 +28,13 @@ fieldLayouts:
             width: 100
         name: Content
         sortOrder: 1
-handle: genre
-name: Genre
+handle: publisher
+name: Publisher
 siteSettings:
   b36c8447-b853-4927-84df-8ff556c38632:
     hasUrls: true
-    template: games/index
-    uriFormat: 'games?genre={slug}'
+    template: games\index
+    uriFormat: 'games?publisher={slug}'
 structure:
   maxLevels: null
-  uid: e6aa435e-b0b7-4099-972a-134d6b2bc0a1
+  uid: 7914830d-587b-4da6-b356-6484811ca83f

@@ -1,5 +1,5 @@
 fieldLayouts:
-  23648934-785b-425f-9f22-5366fb059450:
+  0e553bac-b49b-4947-8486-3afa78897717:
     tabs:
       -
         elements:
@@ -28,13 +28,13 @@ fieldLayouts:
             width: 100
         name: Content
         sortOrder: 1
-handle: company
-name: Company
+handle: developer
+name: Developer
 siteSettings:
   b36c8447-b853-4927-84df-8ff556c38632:
     hasUrls: true
     template: games\index
-    uriFormat: 'games?companie={slug}'
+    uriFormat: 'games?developer={slug}'
 structure:
   maxLevels: null
-  uid: 7914830d-587b-4da6-b356-6484811ca83f
+  uid: d4e5fde7-d8db-4336-a0af-15fb196c5e7d

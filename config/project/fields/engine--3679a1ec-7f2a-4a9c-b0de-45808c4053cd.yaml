@@ -1,8 +1,8 @@
 contentColumnType: string
 fieldGroup: 952af045-3f72-4b08-9298-13041d9e60a8
-handle: gameMode
+handle: engine
 instructions: ''
-name: 'Game Mode'
+name: Engine
 searchable: false
 settings:
   allowLimit: false
@@ -12,8 +12,8 @@ settings:
   limit: null
   localizeRelations: false
   selectionLabel: ''
-  showSiteMenu: false
-  source: 'group:94d93e2c-5e4b-41ac-9b2c-d9de9f99bd8d'
+  showSiteMenu: true
+  source: 'group:a5cc17f5-3176-451f-a2e0-49c483dfda33'
   sources: '*'
   targetSiteId: null
   validateRelatedElements: false

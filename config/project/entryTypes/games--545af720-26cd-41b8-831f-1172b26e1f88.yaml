@@ -45,6 +45,43 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            fieldUid: b640c2d7-3c41-4b45-863e-7250d5748c00
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 456e81da-8f64-49d9-867e-83f02ab80bdd
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            heading: 'Deskripsi game'
+            type: craft\fieldlayoutelements\Heading
+          -
+            fieldUid: fa107f63-5bd7-4f68-9c5b-b70158f091e4
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Info
+        sortOrder: 1
+      -
+        elements:
+          -
+            heading: 'Detail Informasi game'
+            type: craft\fieldlayoutelements\Heading
+          -
             fieldUid: 8c391907-b3d0-481a-a657-ee20d5b862a2
             instructions: null
             label: null
@@ -72,15 +109,6 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 456e81da-8f64-49d9-867e-83f02ab80bdd
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
             fieldUid: 3679a1ec-7f2a-4a9c-b0de-45808c4053cd
             instructions: null
             label: null
@@ -98,17 +126,8 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             warning: null
             width: 100
-          -
-            fieldUid: fa107f63-5bd7-4f68-9c5b-b70158f091e4
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-        name: Content
-        sortOrder: 1
+        name: Specification
+        sortOrder: 2
 handle: games
 hasTitleField: true
 name: Games

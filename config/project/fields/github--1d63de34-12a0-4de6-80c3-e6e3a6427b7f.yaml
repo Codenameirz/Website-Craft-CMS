@@ -1,0 +1,14 @@
+contentColumnType: string(255)
+fieldGroup: 952af045-3f72-4b08-9298-13041d9e60a8
+handle: github
+instructions: ''
+name: Github
+searchable: false
+settings:
+  maxLength: '255'
+  placeholder: null
+  types:
+    - url
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Url

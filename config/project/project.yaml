@@ -1,9 +1,17 @@
-dateModified: 1613054695
+dateModified: 1613570374
 email:
   fromEmail: purwantoharis499@gmail.com
   fromName: 'Website Craft CMS'
   transportType: craft\mail\transportadapters\Sendmail
 plugins:
+  disqus:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  eager-beaver:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
   redactor:
     edition: standard
     enabled: true
@@ -17,7 +25,7 @@ system:
   live: true
   name: 'Website Craft CMS'
   retryDuration: null
-  schemaVersion: 3.6.1
+  schemaVersion: 3.6.4
   timeZone: Asia/Jakarta
 users:
   allowPublicRegistration: false

@@ -33,8 +33,8 @@ name: Platform
 siteSettings:
   b36c8447-b853-4927-84df-8ff556c38632:
     hasUrls: true
-    template: games\index
-    uriFormat: 'game?platform={slug}'
+    template: games/index
+    uriFormat: 'games?platform={slug}'
 structure:
   maxLevels: null
   uid: 396807f0-c3d3-42de-becb-3052bd8051ee
