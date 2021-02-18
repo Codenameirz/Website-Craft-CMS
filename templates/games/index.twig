@@ -4,13 +4,29 @@
 
 {% set searchQuery = craft.app.request.getQueryParam('search') %}
 
-{% set category = craft.app.request.getQueryParam('allCategory') %}
+{% set category = [
+  craft.app.request.queryParam('developer') ?? '' ,
+  craft.app.request.queryParam('publisher') ?? '',
+  craft.app.request.queryParam('genre') ?? '',
+  craft.app.request.queryParam('mode') ?? '',
+  craft.app.request.queryParam('perspective') ?? '',
+  craft.app.request.queryParam('engine') ?? '',
+  craft.app.request.queryParam('platform') ?? ''
+  ]
+%}
 
-{% set allCategory = null %}
+{% set allCategories = null %}
+
+{% if category is not empty %}
+  {% set allCategories = craft.categories
+    .slug(category)
+    .one()
+  %}
+{% endif %}
 
 {% set query = craft.entries()
   .section('games')
-  .relatedTo(allCategory)
+  .relatedTo(allCategories)
   .search(searchQuery)
   .limit(3)
 %}
