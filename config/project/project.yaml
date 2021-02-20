@@ -1,4 +1,4 @@
-dateModified: 1613632158
+dateModified: 1613817588
 email:
   fromEmail: purwantoharis499@gmail.com
   fromName: 'Website Craft CMS'
@@ -8,6 +8,19 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
+    settings:
+      customLogin: false
+      disqusPublicKey: ''
+      disqusSecretKey: ''
+      disqusShortname: infogimcomment
+      loginButton: ''
+      loginHeight: 400
+      loginIcon: ''
+      loginLogoutUrl: ''
+      loginName: ''
+      loginUrl: ''
+      loginWidth: 800
+      useSSO: false
   eager-beaver:
     edition: standard
     enabled: true

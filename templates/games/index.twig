@@ -1,5 +1,7 @@
 {% extends 'layout/_base_layout.twig' %}
 
+{% set subTitle = 'Games' %}
+
 {% set classPagination = "px-4 py-2 border-2 border-white font-bold text-white rounded-md m-auto hover:bg-white hover:text-black transition duration-500" %}
 
 {% set searchQuery = craft.app.request.getQueryParam('search') %}
@@ -27,49 +29,78 @@
 {% set query = craft.entries()
   .section('games')
   .relatedTo(allCategories)
+  .with(['coverImage'])
   .search(searchQuery)
   .limit(3)
 %}
 
+{% paginate query as pageInfo, pageEntries %}
+
 {% block content %}
 
-  {% if query|length %}
+  {% if query|length and not ( craft.app.request.queryParam('page') > pageInfo.totalPages ) %}
 
   <div class="py-24">
     <div class="flex flex-col w-11/12 h-full m-auto rounded-2xl py-8" style="background-color: #212121;">
+
+      <div class="h-full w-11/12 py-12 m-auto">
+        {% include 'components/_search-bar.twig' %}
+      </div>
 
       {% if searchQuery is not empty %}
         <h1 class="text-white font-bold text-xl m-auto">Menampilkan hasil pencarian dari "{{ searchQuery }}"</h1>
       {% endif %}
       
-      <div class="grid md:grid-cols-3 w-11/12 gap-x-8 gap-y-16 py-12 items-center justify-center md:justify-between m-auto">
+        <div class="grid md:grid-cols-3 w-11/12 gap-x-8 gap-y-16 py-12 place-content-center m-auto">
 
+          {% for content in pageEntries %}
+            {% include 'components/_cover.twig' %}
+          {% endfor %}
 
-        {% for content in query %}
-          {% include 'components/_cover.twig' %}
-        {% endfor %}
+        </div>
 
-      </div>
+        <div class="space-x-4 m-auto">
 
-      <div class="space-x-4 m-auto">
-        <a class="{{ classPagination }}" href=""><i class="las la-angle-double-left"></i></a>
-        <a class="{{ classPagination }}" href="">1</a>
-        <a class="{{ classPagination }}" href="">2</a>
-        <a class="{{ classPagination }}" href=""><i class="las la-angle-double-right"></i></a>
-      </div>
+          {% if pageInfo.firstUrl %}
+            <a class="{{ classPagination }}" href="{{ pageInfo.firstUrl }}"><i class="las la-angle-double-left"></i></a>
+          {% endif %}
+
+          {% if pageInfo.prevUrl %}
+            <a class="{{ classPagination }}" href="{{ pageInfo.prevUrl }}"><i class="las la-angle-left"></i></a>
+          {% endif %}
+
+          {% if pageInfo.nextUrl %}
+            <a class="{{ classPagination }}" href="{{ pageInfo.nextUrl }}"><i class="las la-angle-right"></i></a>
+          {% endif %}
+
+          {% if pageInfo.currentPage %}
+            <a class="{{ classPagination }}" href="{{ pageInfo.lastUrl }}"><i class="las la-angle-double-right"></i></a>
+          {% endif %}
+        </div>
+        
+        <p class="text-white text-center text-base pt-4">Menampilkan {{ pageInfo.last }} dari {{ pageInfo.total }} data</p>
 
     </div>
   </div>
   
-  {% else %}
+  {% elseif query|length == 0 %}
 
   <div class="py-24">
     <div class="flex flex-col w-11/12 h-screen m-auto rounded-2xl items-center justify-center m-auto" style="background-color: #212121;">
       <h1 class="text-white text-center w-11/12 text-lg md:text-3xl font-bold pb-8">Tidak ada data yang cocok dengan "{{ searchQuery }}"</h1>
-      <a class="bg-red-500 text-white px-4 md:px-8 py-2 md:py-4 rounded-md border-2 border-red-500 hover:bg-transparent hover:text-red-500 transition duration-300" href="{{ base }}">Kembali ke halaman utama</a>
+      <a class="bg-red-500 text-white px-4 md:px-8 py-2 md:py-4 rounded-md border-2 border-red-500 hover:bg-transparent hover:text-red-500 transition duration-300" href="{{ base~'games' }}">Kembali ke halaman games</a>
     </div>
   </div>
+
+  {% else %}
   
+    <div class="py-24">
+      <div class="flex flex-col w-11/12 h-screen m-auto rounded-2xl items-center justify-center m-auto" style="background-color: #212121;">
+        <h1 class="text-white text-center w-11/12 text-lg md:text-3xl font-bold pb-8">Tidak dapat menampilkan halaman, karena halaman tidak ada</h1>
+        <a class="bg-red-500 text-white px-4 md:px-8 py-2 md:py-4 rounded-md border-2 border-red-500 hover:bg-transparent hover:text-red-500 transition duration-300" href="{{ pageInfo.firstUrl }}">Kembali ke halaman games</a>
+      </div>
+    </div>
+
   {% endif %}
 
 {% endblock %}

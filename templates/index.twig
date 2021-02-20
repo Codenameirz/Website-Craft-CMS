@@ -1,6 +1,14 @@
 {% extends 'layout/_base_layout.twig' %}
 
-{% set contentGames = craft.entries.section('games').order('releaseGame desc').limit(3)%}
+{% set subTitle = 'Homepage' %}
+
+{% set contentGames = craft.entries()
+  .section('games')
+  .orderBy('releaseGame desc')
+  .with(['coverImage'])
+  .limit(3)
+  .all()
+%}
 
 {% block content %}
 
@@ -11,10 +19,7 @@
         <div class="text-white text-center m-auto py-4">{{ entry.richText }}</div>
 
         <!--Search bar-->
-        <form class="relative m-auto" action="{{ url('games') }}">
-            <input class="w-10/12 md:w-11/12 h-10 md:h-12 text-black placeholder-black placeholder-opacity-40 pl-4 rounded-l-lg focus:outline-none" type="text" name="search" placeholder="Cari nama game..." required>
-            <button class="absolute top-0 w-2/12 md:w-1/12 h-10 md:h-12 bg-white text-black hover:bg-gray-600 hover:text-white rounded-r-lg focus:outline-none transition duration-500" type="submit"><i class="las la-search"></i></button>
-          </form>
+        {% include 'components/_search-bar.twig' %}
         <!--End Search bar-->
         
         </div>
