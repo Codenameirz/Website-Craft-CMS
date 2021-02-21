@@ -1,12 +1,10 @@
-<a class="focus:outline-none" href="{{ content.url }}">
+<a class="focus:outline-none" href="{{ item.url }}">
   
-  {% set image = content.coverImage[0] ?? null %}
+  {% set image = item.coverImage[0] ?? null %}
   
-  {% if image %}
   <div class="size group box-content h-auto w-11/12 m-auto transform md:hover:-translate-y-5 transition duration-500">
     <img class="w-full opacity-50 group-hover:opacity-100 rounded focus:outline-none transition duration-500 m-auto" src="{{ image.url }}" alt="">
     <h1 class="text-white text-center text-md md:text-xl font-bold md:opacity-0 md:group-hover:opacity-100 transition duration-500">{{ image.title }}</h1>
   </div>
-  {% endif %}
 
 </a>

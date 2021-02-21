@@ -1,0 +1,42 @@
+field: 16656e31-b433-43ce-8a88-36e79a55c6a3
+fieldLayouts:
+  147f2825-de4d-4033-9f4f-be7c0b7f3f9e:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 2d1aa1d9-11e7-4ccb-9ef6-65b72d307135
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  2d1aa1d9-11e7-4ccb-9ef6-65b72d307135:
+    contentColumnType: string
+    fieldGroup: null
+    handle: recentPost
+    instructions: ''
+    name: 'Recent Post'
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      limit: ''
+      localizeRelations: false
+      selectionLabel: ''
+      showSiteMenu: true
+      source: null
+      sources: '*'
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Entries
+handle: recentPost
+name: 'Recent Post'
+sortOrder: 2

@@ -11,10 +11,10 @@
 
 <!--Footer start-->
 <footer class="w-full h-auto" style="background-color: #111111;">
-  <div class="grid md:grid-cols-3 w-11/12 gap-x-12 gap-y-4 m-auto pt-4 pb-8">
+  <div class="grid md:grid-cols-4 w-11/12 gap-x-12 gap-y-4 m-auto pt-4 pb-8">
     <div class="box-content bg-transparent text-white">
       <h1 class="font-bold md:text-lg border-b-2 pb-2">About</h1>
-      <p class="text-sm md:text-base pt-2">{{ footer.richText }}</p>
+      <div class="text-sm text-white md:text-base pt-2">{{ footer.richText }}</div>
     </div>
     <div class="box-content bg-transparent text-white">
       <h1 class="font-bold md:text-lg border-b-2 pb-2">Menu</h1>
@@ -23,6 +23,15 @@
         <li class="text-white"><a class="text-sm md:text-base hover:text-gray-400 hover:underline" href="{{ item.link }}">{{ item.menu }}</a></li>
       {% endfor %}
       </ul>
+    </div>
+    <div class="box-content bg-transparent text-white">
+      <h1 class="font-bold md:text-lg border-b-2 pb-2">Recent post</h1>
+        <ul class="pt-2">
+          {% set recent = craft.entries.section('games').limit(5).all() %}
+          {% for item in recent %}
+            <li class="text-white"><a class="text-sm md:text-base hover:text-gray-400 hover:underline" href="{{ item.url }}">{{ item.title }}</a></li>
+          {% endfor %}
+        </ul>
     </div>
     <div class="box-content bg-transparent text-white">
       <h1 class="font-bold md:text-lg border-b-2 pb-2">Find me</h1>

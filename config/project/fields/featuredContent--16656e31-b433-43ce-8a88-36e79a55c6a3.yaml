@@ -1,0 +1,14 @@
+contentColumnType: string
+fieldGroup: 952af045-3f72-4b08-9298-13041d9e60a8
+handle: featuredContent
+instructions: ''
+name: 'Featured Content'
+searchable: false
+settings:
+  contentTable: '{{%matrixcontent_featuredcontent}}'
+  maxBlocks: ''
+  minBlocks: ''
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix
