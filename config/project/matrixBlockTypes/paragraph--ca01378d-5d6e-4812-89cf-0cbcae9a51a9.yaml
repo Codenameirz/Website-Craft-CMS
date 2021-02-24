@@ -1,11 +1,11 @@
 field: 16656e31-b433-43ce-8a88-36e79a55c6a3
 fieldLayouts:
-  ef28ba08-0c65-47a2-833f-c44e20973bca:
+  636a5f56-5f89-4e57-b991-3bbc1aa6070a:
     tabs:
       -
         elements:
           -
-            fieldUid: 5036dabd-f8f0-4238-9925-9729bd7ba18a
+            fieldUid: 56e11564-cefb-48d5-b9f6-ea913570e72f
             instructions: null
             label: null
             required: false
@@ -14,7 +14,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: ec7fb87e-65ac-427b-a7e9-ea690541c66b
+            fieldUid: a98e25b8-9791-4243-b15d-60d2af72eb84
             instructions: null
             label: null
             required: false
@@ -23,7 +23,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 5bb7ba08-bfcd-4b11-b130-424e5e444d57
+            fieldUid: de6a23c3-e33d-4505-9a08-721187fe8788
             instructions: null
             label: null
             required: false
@@ -32,7 +32,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: f1d58bbb-5b73-4265-a4c5-3842bd289455
+            fieldUid: 6c272b84-6e58-4d22-b93e-ad6e96301abd
             instructions: null
             label: null
             required: false
@@ -43,7 +43,7 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  5036dabd-f8f0-4238-9925-9729bd7ba18a:
+  56e11564-cefb-48d5-b9f6-ea913570e72f:
     contentColumnType: text
     fieldGroup: null
     handle: header
@@ -62,32 +62,27 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
-  5bb7ba08-bfcd-4b11-b130-424e5e444d57:
-    contentColumnType: integer(10)
+  6c272b84-6e58-4d22-b93e-ad6e96301abd:
+    contentColumnType: string(255)
     fieldGroup: null
-    handle: numberOfPost
+    handle: button
     instructions: ''
-    name: 'Number Of Post'
+    name: Button
     searchable: false
     settings:
-      decimals: 0
-      defaultValue: null
-      max: null
-      min: '0'
-      prefix: null
-      previewCurrency: ''
-      previewFormat: decimal
-      size: null
-      suffix: null
+      maxLength: '255'
+      placeholder: null
+      types:
+        - url
     translationKeyFormat: null
     translationMethod: none
-    type: craft\fields\Number
-  ec7fb87e-65ac-427b-a7e9-ea690541c66b:
+    type: craft\fields\Url
+  a98e25b8-9791-4243-b15d-60d2af72eb84:
     contentColumnType: text
     fieldGroup: null
-    handle: desc
+    handle: body
     instructions: ''
-    name: Desc
+    name: Body
     searchable: false
     settings:
       byteLimit: null
@@ -101,7 +96,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
-  f1d58bbb-5b73-4265-a4c5-3842bd289455:
+  de6a23c3-e33d-4505-9a08-721187fe8788:
     contentColumnType: text
     fieldGroup: null
     handle: bgColor
@@ -120,6 +115,6 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
-handle: featuredGames
-name: 'Featured Games'
-sortOrder: 2
+handle: paragraph
+name: Paragraph
+sortOrder: 1

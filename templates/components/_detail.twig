@@ -1,0 +1,14 @@
+<h2 class="text-base md:text-xl text-white py-3 font-bold">
+  {{ label }}
+  {% if items is defined %}
+    {% for item in items %}
+      <a class="md:px-2 xl:py-1 xl:border-2 font-normal rounded-md text-white hover:underline text-opacity-100 hover:text-opacity-40 xl:hover:no-underline text-sm md:text-base border-white xl:hover:bg-white xl:hover:text-black" href="{{ item.url }}">{{ item }}</a>
+      {% if not loop.last %}
+      <span class="xl:hidden font-normal text-sm md:text-base">,</span>
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+  {% if tanggal is defined %}
+    <a class="font-normal text-sm md:text-base">{{ tanggal }}</a>
+  {% endif %}
+</h2>

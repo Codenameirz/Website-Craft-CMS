@@ -27,7 +27,7 @@
     <div class="box-content bg-transparent text-white">
       <h1 class="font-bold md:text-lg border-b-2 pb-2">Recent post</h1>
         <ul class="pt-2">
-          {% set recent = craft.entries.section('games').limit(5).all() %}
+          {% set recent = craft.entries.section('games').limit(6).all() %}
           {% for item in recent %}
             <li class="text-white"><a class="text-sm md:text-base hover:text-gray-400 hover:underline" href="{{ item.url }}">{{ item.title }}</a></li>
           {% endfor %}

@@ -1,6 +1,6 @@
-<a class="focus:outline-none" href="{{ item.url }}">
+<a class="focus:outline-none" href="{{ content.url }}">
   
-  {% set image = item.coverImage[0] ?? null %}
+  {% set image = content.coverImage[0] ?? null %}
   
   <div class="size group box-content h-auto w-11/12 m-auto transform md:hover:-translate-y-5 transition duration-500">
     <img class="w-full opacity-50 group-hover:opacity-100 rounded focus:outline-none transition duration-500 m-auto" src="{{ image.url }}" alt="">

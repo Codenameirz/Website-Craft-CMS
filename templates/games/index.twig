@@ -51,9 +51,9 @@
         <h1 class="text-white font-bold text-xl m-auto">Menampilkan hasil pencarian dari "{{ searchQuery }}"</h1>
       {% endif %}
       
-        <div class="grid md:grid-cols-3 w-11/12 gap-x-8 gap-y-16 py-12 place-content-center m-auto">
+      <div class="grid md:grid-cols-3 w-11/12 gap-x-8 gap-y-16 py-12 place-content-center m-auto">
 
-          {% for item in pageEntries %}
+          {% for content in pageEntries %}
             {% include 'components/_cover.twig' %}
           {% endfor %}
 
@@ -61,21 +61,8 @@
 
         <div class="space-x-4 m-auto">
 
-          {% if pageInfo.lastUrl %}
-            <a class="{{ classPagination }}" href="{{ pageInfo.firstUrl }}"><i class="las la-angle-double-left"></i></a>
-          {% endif %}
+          {% include 'components/_pagination.twig' %}
 
-          {% if pageInfo.prevUrl %}
-            <a class="{{ classPagination }}" href="{{ pageInfo.prevUrl }}"><i class="las la-angle-left"></i></a>
-          {% endif %}
-
-          {% if pageInfo.nextUrl %}
-            <a class="{{ classPagination }}" href="{{ pageInfo.nextUrl }}"><i class="las la-angle-right"></i></a>
-          {% endif %}
-
-          {% if pageInfo.firstUrl %}
-            <a class="{{ classPagination }}" href="{{ pageInfo.lastUrl }}"><i class="las la-angle-double-right"></i></a>
-          {% endif %}
         </div>
         
         <p class="text-white text-center text-base pt-4">Menampilkan {{ pageInfo.last }} dari {{ pageInfo.total }} data</p>

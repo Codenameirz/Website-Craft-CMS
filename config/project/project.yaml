@@ -1,4 +1,4 @@
-dateModified: 1613922038
+dateModified: 1614175376
 email:
   fromEmail: purwantoharis499@gmail.com
   fromName: 'Website Craft CMS'
@@ -36,7 +36,7 @@ plugins:
 system:
   edition: solo
   live: true
-  name: 'Website Craft CMS'
+  name: infoGim
   retryDuration: null
   schemaVersion: 3.6.4
   timeZone: Asia/Jakarta

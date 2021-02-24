@@ -1,0 +1,13 @@
+<div class="flex flex-col w-full h-screen" style="{{ blockContent.bgColor }}">
+  <div class="grid md:grid-cols-2 w-11/12 gap-x-12 gap-y-4 m-auto">
+    <div class="box-content w-11/12 text-center md:text-left m-auto">
+      <h1 class="text-white text-2xl md:text-4xl font-bold">{{ blockContent.header }}</h1>
+      <p class="text-white text-base md:text-lg py-6">{{ blockContent.body }}</p>
+      <a class="py-3 px-8 text-base rounded-full" style="background-color: #414141;" href="{{ blockContent.button }}">Lihat semua game</a>
+    </div>
+    <div class="box-content w-11/12 m-auto">
+      <h1 class="text-white text-2xl md:text-4xl font-bold text-center">{{ blockContent.header }}</h1>
+      <p class="text-white text-base md:text-lg py-6 text-center">{{ blockContent.body }}</p>
+    </div>
+  </div>
+</div>

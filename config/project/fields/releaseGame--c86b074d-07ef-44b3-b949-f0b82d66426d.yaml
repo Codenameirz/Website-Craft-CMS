@@ -2,7 +2,7 @@ contentColumnType: datetime
 fieldGroup: 952af045-3f72-4b08-9298-13041d9e60a8
 handle: releaseGame
 instructions: ''
-name: 'Release Date'
+name: 'Release Game'
 searchable: false
 settings:
   max: null

@@ -10,72 +10,79 @@
         <div class="col-span-1 py-2">
           <img class="w-full h-auto p-2 m-auto" style="background-color: #050505;" src="{{ entry.coverImage.one().url }}" alt="">
         </div>
-        <div class="col-span-2 md:px-2 border-t border-b md:border-0 borde-white">
+          <div class="col-span-2 md:px-2 border-t md:border-0 border-white">
 
-          <h1 class="text-white text-xl md:text-2xl lg:text-4xl font-bold">{{ entry.title }} ({{ entry.releaseGame|date("Y")}})</h1>
+              <h1 class="text-white text-xl md:text-2xl lg:text-4xl font-bold">{{ entry.title }} ({{ entry.releaseGame|date("Y")}})</h1>
 
-          <h2 class="text-base md:text-xl text-white py-2 font-bold"> Tanggal Rilis :
-            <a class="font-normal text-sm md:text-base">{{ entry.releaseGame|date("d M Y") }}</a>
-          </h2>
+              {% include 'components/_detail.twig'
+                with{
+                  'label' : 'Tanggal rilis :',
+                  'tanggal' : entry.releaseGame|date("d M Y"),
+                }  
+              %}
 
-          <h2 class="text-base md:text-xl text-white py-3 font-bold">Developer :
-            {% for item in entry.developer.all() %}
-              <a class="md:px-2 xl:py-1 xl:border-2 font-normal rounded-md text-white hover:underline text-opacity-100 hover:text-opacity-40 xl:hover:no-underline text-sm md:text-base border-white xl:hover:bg-white xl:hover:text-black" href="{{ item.url }}"> {{ item }}</a>
-                {% if not loop.last %} <span class="xl:hidden font-normal text-sm md:text-base">,</span>{% endif %}
-            {% endfor %}
-          </h2>
+              {% include 'components/_detail.twig'
+                with{
+                  'label' : 'Developer :',
+                  'items' : entry.developer.all(),
+                }  
+              %}
 
-          <h2 class="text-base md:text-xl text-white py-3 font-bold">Publisher :
-            {% for item in entry.publisher.all() %}
-              <a class="md:px-2 xl:py-1 xl:border-2 font-normal rounded-md text-white hover:underline text-opacity-100 hover:text-opacity-40 xl:hover:no-underline text-sm md:text-base border-white xl:hover:bg-white xl:hover:text-black" href="{{ item.url }}"> {{ item }}</a>
-            {% endfor %}
-          </h2>
+              {% include 'components/_detail.twig'
+                with{
+                  'label' : 'Publisher :',
+                  'items' : entry.publisher.all(),
+                }  
+              %}
 
-          <h2 class="text-base md:text-xl text-white py-3 font-bold">Genre :
-            {% for item in entry.genre.all() %}
-              <a class="md:px-2 xl:py-1 xl:border-2 font-normal rounded-md text-white hover:underline text-opacity-100 hover:text-opacity-40 xl:hover:no-underline text-sm md:text-base border-white xl:hover:bg-white xl:hover:text-black" href="{{ item.url }}"> {{ item }}</a>
-              {% if not loop.last %} <span class="xl:hidden font-normal text-sm md:text-base">,</span>{% endif %}
-            {% endfor %}
-          </h2>
+              {% include 'components/_detail.twig'
+                with{
+                  'label' : 'Genre :',
+                  'items' : entry.genre.all(),
+                }  
+              %}
 
-          <h2 class="text-base md:text-xl text-white py-3 font-bold">Mode :
-            {% for item in entry.mode.all() %}
-              <a class="md:px-2 xl:py-1 xl:border-2 font-normal rounded-md text-white hover:underline text-opacity-100 hover:text-opacity-40 xl:hover:no-underline text-sm md:text-base border-white xl:hover:bg-white xl:hover:text-black" href="{{ item.url }}"> {{ item }}</a>
-              {% if not loop.last %} <span class="xl:hidden font-normal text-sm md:text-base">,</span>{% endif %}
-            {% endfor %}
-          </h2>
+              {% include 'components/_detail.twig'
+                with{
+                  'label' : 'Mode :',
+                  'items' : entry.mode.all(),
+                }  
+              %}
 
-          <h2 class="text-base md:text-xl text-white py-3 font-bold">Perspective :
-            {% for item in entry.perspective.all() %}
-              <a class="md:px-2 xl:py-1 xl:border-2 font-normal rounded-md text-white hover:underline text-opacity-100 hover:text-opacity-40 xl:hover:no-underline text-sm md:text-base border-white xl:hover:bg-white xl:hover:text-black" href="{{ item.url }}"> {{ item }}</a>
-              {% if not loop.last %} <span class="xl:hidden font-normal text-sm md:text-base">,</span>{% endif %}
-            {% endfor %}
-          </h2>
+              {% include 'components/_detail.twig'
+                with{
+                  'label' : 'Perspective :',
+                  'items' : entry.perspective.all(),
+                }  
+              %}
 
-          <h2 class="text-base md:text-xl text-white py-3 font-bold">Engine :
-            {% for item in entry.engine.all() %}
-              <a class="md:px-2 xl:py-1 xl:border-2 font-normal rounded-md text-white hover:underline text-opacity-100 hover:text-opacity-40 xl:hover:no-underline text-sm md:text-base border-white xl:hover:bg-white xl:hover:text-black" href="{{ item.url }}"> {{ item }}</a>
-            {% endfor %}
-          </h2>
+              {% include 'components/_detail.twig'
+                with{
+                  'label' : 'Engine :',
+                  'items' : entry.engine.all(),
+                }  
+              %}
 
-          <h2 class="text-base md:text-xl text-white py-3 font-bold">Platform :
-            {% for item in entry.platform.all() %}
-              <a class="md:px-2 xl:py-1 xl:border-2 font-normal rounded-md text-white hover:underline text-opacity-100 hover:text-opacity-40 xl:hover:no-underline text-sm md:text-base border-white xl:hover:bg-white xl:hover:text-black" href="{{ item.url }}"> {{ item }}</a>
-              {% if not loop.last %} <span class="xl:hidden font-normal text-sm md:text-base">,</span>{% endif %}
-            {% endfor %}
-          </h2>
+              {% include 'components/_detail.twig'
+                with{
+                  'label' : 'Platform :',
+                  'items' : entry.platform.all(),
+                }  
+              %}
+            </div>
+          </div>
 
+          <div class="box-content w-full h-full my-2 bg-transparent">
+            <h1 class="text-white text-base md:text-xl font-bold">Ringkasan :</h1>
+            <div class="text-white text-sm md:text-base">{{ entry.richText }}</div>
+          </div>
         </div>
-      </div>
-      <div class="box-content w-full h-full my-2 bg-transparent">
-        <h1 class="text-white text-base md:text-xl font-bold">Ringkasan :</h1>
-        <div class="text-white text-sm md:text-base">{{ entry.richText }}</div>
       </div>
     </div>
   </div>
 
   <div class="w-11/12 mb-12 m-auto">
-    {% include 'components/_disqus.twig' %}
+    {{ disqusEmbed(entry.slug, entry.title, entry.url) }}
   </div>
 
 {% endblock %}
