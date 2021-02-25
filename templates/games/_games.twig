@@ -10,72 +10,88 @@
         <div class="col-span-1 py-2">
           <img class="w-full h-auto p-2 m-auto" style="background-color: #050505;" src="{{ entry.coverImage.one().url }}" alt="">
         </div>
-          <div class="col-span-2 md:px-2 border-t md:border-0 border-white">
+          <div class="md:col-span-2 md:px-2 text-white">
 
-              <h1 class="text-white text-xl md:text-2xl lg:text-4xl font-bold">{{ entry.title }} ({{ entry.releaseGame|date("Y")}})</h1>
+            <div x-data="{ tab: 'info' }">
+              <button :class="{ 'active': tab === 'info', 'bg-white': tab === 'info', 'text-black': tab === 'info' }" class="py-2 px-4 rounded-t border-t border-r border-l focus:outline-none" @click="tab = 'info'">Info</button>
+              <button :class="{ 'active': tab === 'detail', 'bg-white': tab === 'detail', 'text-black': tab === 'detail' }" class="py-2 px-4 rounded-t border-t border-r border-l focus:outline-none" @click="tab = 'detail'">Detail</button>
 
-              {% include 'components/_detail.twig'
-                with{
-                  'label' : 'Tanggal rilis :',
-                  'tanggal' : entry.releaseGame|date("d M Y"),
-                }  
-              %}
+              <div x-show="tab === 'info'">
 
-              {% include 'components/_detail.twig'
-                with{
-                  'label' : 'Developer :',
-                  'items' : entry.developer.all(),
-                }  
-              %}
+                <h1 class="text-white text-xl md:text-2xl lg:text-4xl font-bold">{{ entry.title }} ({{ entry.releaseGame|date("Y")}})</h1>
 
-              {% include 'components/_detail.twig'
-                with{
-                  'label' : 'Publisher :',
-                  'items' : entry.publisher.all(),
-                }  
-              %}
+                {% include 'components/_detail.twig'
+                  with{
+                    'label' : 'Tanggal rilis :',
+                    'tanggal' : entry.releaseGame|date("d M Y"),
+                  }  
+                %}
 
-              {% include 'components/_detail.twig'
-                with{
-                  'label' : 'Genre :',
-                  'items' : entry.genre.all(),
-                }  
-              %}
+                {% include 'components/_detail.twig'
+                  with{
+                    'label' : 'Developer :',
+                    'items' : entry.developer.all(),
+                  }  
+                %}
 
-              {% include 'components/_detail.twig'
-                with{
-                  'label' : 'Mode :',
-                  'items' : entry.mode.all(),
-                }  
-              %}
+                {% include 'components/_detail.twig'
+                  with{
+                    'label' : 'Publisher :',
+                    'items' : entry.publisher.all(),
+                  }  
+                %}
 
-              {% include 'components/_detail.twig'
-                with{
-                  'label' : 'Perspective :',
-                  'items' : entry.perspective.all(),
-                }  
-              %}
+                {% include 'components/_detail.twig'
+                  with{
+                    'label' : 'Genre :',
+                    'items' : entry.genre.all(),
+                  }  
+                %}
 
-              {% include 'components/_detail.twig'
-                with{
-                  'label' : 'Engine :',
-                  'items' : entry.engine.all(),
-                }  
-              %}
+                {% include 'components/_detail.twig'
+                  with{
+                    'label' : 'Mode :',
+                    'items' : entry.mode.all(),
+                  }  
+                %}
 
-              {% include 'components/_detail.twig'
-                with{
-                  'label' : 'Platform :',
-                  'items' : entry.platform.all(),
-                }  
-              %}
+                {% include 'components/_detail.twig'
+                  with{
+                    'label' : 'Perspective :',
+                    'items' : entry.perspective.all(),
+                  }  
+                %}
+
+                {% include 'components/_detail.twig'
+                  with{
+                    'label' : 'Engine :',
+                    'items' : entry.engine.all(),
+                  }  
+                %}
+
+                {% include 'components/_detail.twig'
+                  with{
+                    'label' : 'Platform :',
+                    'items' : entry.platform.all(),
+                  }  
+                %}
+
+              </div>
+
+              <div x-show="tab === 'detail'">
+
+                <div class="box-content w-full h-full my-2 bg-transparent">
+                  <h1 class="text-white text-base md:text-xl font-bold">Ringkasan :</h1>
+                  <div class="text-white text-sm md:text-base">{{ entry.richText }}</div>
+                </div>
+
+              </div>
+
+            </div>
+
             </div>
           </div>
-
-          <div class="box-content w-full h-full my-2 bg-transparent">
-            <h1 class="text-white text-base md:text-xl font-bold">Ringkasan :</h1>
-            <div class="text-white text-sm md:text-base">{{ entry.richText }}</div>
-          </div>
+          
         </div>
       </div>
     </div>

@@ -29,6 +29,10 @@
           {% include 'components/_home_paragraph.twig' %}
         {% endif %}
 
+        {% if blockContent.type == 'accordion' %}
+          {% include 'components/_accordion.twig' %}
+        {% endif %}
+
         {% if blockContent.type == 'featuredGames' %}
           {% include 'components/_home_content.twig'
             with{
