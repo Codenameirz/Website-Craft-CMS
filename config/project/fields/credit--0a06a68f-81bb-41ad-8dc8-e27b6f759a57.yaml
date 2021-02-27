@@ -1,0 +1,18 @@
+contentColumnType: text
+fieldGroup: 952af045-3f72-4b08-9298-13041d9e60a8
+handle: credit
+instructions: ''
+name: credit
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: null
+  initialRows: '4'
+  multiline: ''
+  placeholder: ''
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

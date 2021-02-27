@@ -12,11 +12,13 @@
     <i :class="{ 'las la-bars transform rotate-0 duration-500': open === false, 'las la-times transform rotate-180 scale-50 duration-500': open === true }" style="font-size: 36px;"></i>
   </button>
   <ul :class="{ 'block': open, 'hidden': !open }" @click.away="open = false" class="absolute top-16 w-full md:static md:justify-end md:flex md:flex-row" style="background-color: #111111;">
-  {% for item in navbar %}
-    <a class="font-semibold text-yellow-500 text-opacity-50 hover:text-opacity-100 transition duration-500" href="{{ item.url }}">
-      <li class="p-4" @click="open: false">{{ item.page }}</li>
-    </a>
-  {% endfor %}
+    <div x-data="{ active: '{{ craft.app.request.absoluteUrl }}' }" class="md:flex md:flex-row">
+    {% for item in navbar %}
+      <a :class="{ 'text-opacity-100': active === '{{ item.url }}' }" class="font-semibold text-yellow-500 text-opacity-50 hover:text-opacity-100 transition duration-500" href="{{ item.url }}">
+        <li class="p-4" @click="open: false">{{ item.page }}</li>
+      </a>
+    {% endfor %}
+    </div>
   </ul>
 </nav>
 <!--Navbar end-->

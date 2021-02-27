@@ -6,19 +6,23 @@
 
   <div class="py-24">
     <div class="flex flex-col h-full w-11/12 rounded-2xl m-auto p-12" style="background-color: #212121;">
-      <div class="grid md:grid-cols-3 gap-x-4 gap-y-2 w-full justify-between">
-        <div class="col-span-1 py-2">
-          <img class="w-full h-auto p-2 m-auto" style="background-color: #050505;" src="{{ entry.coverImage.one().url }}" alt="">
+      <div class="grid md:grid-cols-3 gap-x-4 gap-y-8 w-full justify-between">
+        <div class="col-span-1">
+          <img class="w-full h-auto p-2 m-auto" style="background-color: #050505; border: 5px double #f59e0b;" src="{{ entry.coverImage.one().url }}" alt="">
         </div>
-          <div class="md:col-span-2 md:px-2 text-white">
+          <div class="md:col-span-2 md:px-2 text-yellow-500">
 
             <div x-data="{ tab: 'info' }">
-              <button :class="{ 'active': tab === 'info', 'bg-white': tab === 'info', 'text-black': tab === 'info' }" class="py-2 px-4 rounded-t border-t border-r border-l focus:outline-none" @click="tab = 'info'">Info</button>
-              <button :class="{ 'active': tab === 'detail', 'bg-white': tab === 'detail', 'text-black': tab === 'detail' }" class="py-2 px-4 rounded-t border-t border-r border-l focus:outline-none" @click="tab = 'detail'">Detail</button>
 
+              <div class="grid grid-cols-2">
+                <button :class="{ 'active': tab === 'info', 'bg-yellow-500': tab === 'info', 'text-black font-bold': tab === 'info' }" class="h-12 w-11/12 col-end-2 font-light rounded-t border-t border-r border-l border-yellow-500 focus:outline-none m-auto" @click="tab = 'info'">Info</button>
+                <button :class="{ 'active': tab === 'sinopsis', 'bg-yellow-500': tab === 'sinopsis', 'text-black font-bold': tab === 'sinopsis' }" class="h-12 w-11/12 col-start-2 font-light rounded-t border-t border-r border-l border-yellow-500 focus:outline-none m-auto" @click="tab = 'sinopsis'">Sinopsis</button>
+              </div>
+
+              <div class="border-2 border-yellow-500 p-4">
               <div x-show="tab === 'info'">
 
-                <h1 class="text-white text-xl md:text-2xl lg:text-4xl font-bold">{{ entry.title }} ({{ entry.releaseGame|date("Y")}})</h1>
+                <h1 class="text-white border-b-2 border-white pb-2 text-xl md:text-2xl lg:text-4xl font-bold">{{ entry.title }} ({{ entry.releaseGame|date("Y")}})</h1>
 
                 {% include 'components/_detail.twig'
                   with{
@@ -78,12 +82,14 @@
 
               </div>
 
-              <div x-show="tab === 'detail'">
+              <div x-show="tab === 'sinopsis'">
 
                 <div class="box-content w-full h-full my-2 bg-transparent">
-                  <h1 class="text-white text-base md:text-xl font-bold">Ringkasan :</h1>
+                  <h1 class="text-white text-base md:text-xl font-bold">Sinopsis :</h1>
                   <div class="text-white text-sm md:text-base">{{ entry.richText }}</div>
                 </div>
+
+              </div>
 
               </div>
 
@@ -97,7 +103,7 @@
     </div>
   </div>
 
-  <div class="w-11/12 mb-12 m-auto">
+  <div class="w-11/12 mb-12 text-yellow-500 m-auto">
     {{ disqusEmbed(entry.slug, entry.title, entry.url) }}
   </div>
 
