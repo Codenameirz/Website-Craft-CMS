@@ -15,8 +15,8 @@
             <div x-data="{ tab: 'info' }">
 
               <div class="grid grid-cols-2">
-                <button :class="{ 'active': tab === 'info', 'bg-yellow-500': tab === 'info', 'text-black font-bold': tab === 'info' }" class="h-12 w-11/12 col-end-2 font-light rounded-t border-t border-r border-l border-yellow-500 focus:outline-none m-auto" @click="tab = 'info'">Info</button>
-                <button :class="{ 'active': tab === 'sinopsis', 'bg-yellow-500': tab === 'sinopsis', 'text-black font-bold': tab === 'sinopsis' }" class="h-12 w-11/12 col-start-2 font-light rounded-t border-t border-r border-l border-yellow-500 focus:outline-none m-auto" @click="tab = 'sinopsis'">Sinopsis</button>
+                <button :class="{ 'active': tab === 'info', 'bg-yellow-500 text-black font-bold hover:bg-opacity-100': tab === 'info'}" class="h-12 w-11/12 font-light hover:bg-yellow-500 hover:bg-opacity-80 hover:text-black rounded-t border-t border-r border-l border-yellow-500 focus:outline-none m-auto" @click="tab = 'info'">Info</button>
+                <button :class="{ 'active': tab === 'sinopsis', 'bg-yellow-500 text-black font-bold hover:bg-opacity-100': tab === 'sinopsis'}" class="h-12 w-11/12 font-light hover:bg-yellow-500 hover:bg-opacity-80 hover:text-black rounded-t border-t border-r border-l border-yellow-500 focus:outline-none m-auto" @click="tab = 'sinopsis'">Sinopsis</button>
               </div>
 
               <div class="border-2 border-yellow-500 p-4">

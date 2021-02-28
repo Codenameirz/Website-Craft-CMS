@@ -1,20 +1,53 @@
-<div class="flex flex-col w-full h-screen" style="{{ blockContent.bgColor }}">
-  <div class="grid md:grid-cols-2 w-11/12 gap-x-12 gap-y-4 m-auto">
-    <div class="box-content w-11/12 text-center m-auto">
-      
-    </div>
-    <div class="box-content w-11/12 m-auto">
-      <h1 class="text-yellow-500 text-center md:text-left border-b-2 border-yellow-500 pb-2 text-2xl md:text-4xl font-bold">{{ blockContent.header }}</h1>
-      <p class="text-white text-center md:text-left text-base md:text-lg my-3">{{ blockContent.body }}</p>
+<div class="flex flex-col w-full h-full md:h-screen" style="{{ blockContent.bgColor }}">
+  <div class="py-24 m-auto">
+    <div class="grid md:grid-cols-2 w-11/12 gap-x-12 gap-y-12 m-auto">
+      <div class="box-content w-11/12 text-center m-auto">
+        <img class="h-48 md:h-96 w-10/12 md:w-11/12 justify-center m-auto" src="{{ blockContent.image[0].url }}" alt="">
+      </div>
+      <div class="box-content w-11/12 m-auto">
+        <h1 class="text-yellow-500 text-center md:text-left border-b-2 border-yellow-500 pb-2 text-2xl md:text-4xl font-bold">{{ blockContent.header }}</h1>
+        <p class="text-white text-center md:text-left text-base md:text-lg my-3">{{ blockContent.body }}</p>
 
-      <div x-data="{ openedIndex: false }" class="flex flex-col">
-        
-        <div @click="openedIndex == 1 ? openedIndex = -1 : openedIndex = 1" class="flex items-center bg-yellow-500 justify-between cursor-pointer border border-black p-4">
-          <p class="font-semibold md:font-bold text-black">Apa itu infoGim?</p>
-          <span :class="openedIndex == 1 ? 'la-angle-down' : 'la-angle-up'" class="las text-black"></span>
-        </div>
-        <div 
-              x-show="openedIndex == 1" 
+        <div x-data="{ openedIndex: false }" class="flex flex-col">
+          
+          <div @click="openedIndex == 1 ? openedIndex = -1 : openedIndex = 1" class="flex items-center bg-yellow-500 justify-between cursor-pointer border border-black p-4">
+            <p class="font-semibold md:font-bold text-black">Apa itu infoGim?</p>
+            <span :class="openedIndex == 1 ? 'la-angle-down' : 'la-angle-up'" class="las text-black"></span>
+          </div>
+          <div 
+                x-show="openedIndex == 1" 
+                x-transition:enter="transition duration-400 transform ease-in-out"
+                x-transition:enter-start="scale-95"
+                x-transition:leave="transition transform ease-out"
+                x-transition:leave-end="scale-95" 
+                class="p-4 text-white"
+                style="background-color: #313131;"
+              >
+            infoGim adalah website yang memuat informasi tentang game.
+          </div>
+
+          <div @click="openedIndex == 2 ? openedIndex = -1 : openedIndex = 2" class="flex items-center bg-yellow-500 justify-between cursor-pointer border border-black p-4">
+            <p class="font-semibold md:font-bold text-black">Informasi apa saja yang ada di infoGim?</p>
+            <span :class="openedIndex == 2 ? 'la-angle-down' : 'la-angle-up'" class="las text-black"></span>
+          </div>
+          <div 
+                x-show="openedIndex == 2" 
+                x-transition:enter="transition duration-400 transform ease-in-out"
+                x-transition:enter-start="scale-95"
+                x-transition:leave="transition transform ease-out"
+                x-transition:leave-end="scale-95" 
+                class="p-4 text-white"
+                style="background-color: #313131;"
+            >
+            infoGim berisi informasi tanggal rilis, developer, publisher, genre, mode, perspective, engine, dan platform bermain game.
+          </div>
+
+          <div @click="openedIndex == 3 ? openedIndex = -1 : openedIndex = 3" class="flex items-center bg-yellow-500 justify-between cursor-pointer border border-black p-4">
+            <p class="font-semibold md:font-bold text-black">Apakah informasi yang ada di infoGim benar?</p>
+            <span :class="openedIndex == 3 ? 'la-angle-down' : 'la-angle-up'" class="las text-black"></span>
+          </div>
+          <div 
+              x-show="openedIndex == 3"
               x-transition:enter="transition duration-400 transform ease-in-out"
               x-transition:enter-start="scale-95"
               x-transition:leave="transition transform ease-out"
@@ -22,43 +55,12 @@
               class="p-4 text-white"
               style="background-color: #313131;"
             >
-          infoGim adalah website yang memuat informasi tentang game.
-        </div>
+            Informasi yang ada di infoGim diambil dari beberapa sumber terpercaya, seperti wikipedia.
+          </div>
 
-        <div @click="openedIndex == 2 ? openedIndex = -1 : openedIndex = 2" class="flex items-center bg-yellow-500 justify-between cursor-pointer border border-black p-4">
-          <p class="font-semibold md:font-bold text-black">Informasi apa saja yang ada di infoGim?</p>
-          <span :class="openedIndex == 2 ? 'la-angle-down' : 'la-angle-up'" class="las text-black"></span>
-        </div>
-        <div 
-              x-show="openedIndex == 2" 
-              x-transition:enter="transition duration-400 transform ease-in-out"
-              x-transition:enter-start="scale-95"
-              x-transition:leave="transition transform ease-out"
-              x-transition:leave-end="scale-95" 
-              class="p-4 text-white"
-              style="background-color: #313131;"
-          >
-          infoGim berisi informasi tanggal rilis, developer, publisher, genre, mode, perspective, engine, dan platform bermain game.
-        </div>
-
-        <div @click="openedIndex == 3 ? openedIndex = -1 : openedIndex = 3" class="flex items-center bg-yellow-500 justify-between cursor-pointer border border-black p-4">
-          <p class="font-semibold md:font-bold text-black">Apakah informasi yang ada di infoGim sesuai dengan fakta?</p>
-          <span :class="openedIndex == 3 ? 'la-angle-down' : 'la-angle-up'" class="las text-black"></span>
-        </div>
-        <div 
-            x-show="openedIndex == 3"
-            x-transition:enter="transition duration-400 transform ease-in-out"
-            x-transition:enter-start="scale-95"
-            x-transition:leave="transition transform ease-out"
-            x-transition:leave-end="scale-95" 
-            class="p-4 text-white"
-            style="background-color: #313131;"
-          >
-          Informasi yang ada di infoGim diambil dari beberapa sumber terpercaya, seperti wikipedia.
         </div>
 
       </div>
-
     </div>
   </div>
 </div>

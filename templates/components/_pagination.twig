@@ -1,15 +1,9 @@
-{% if pageInfo.lastUrl %}
-  <a class="{{ classPagination }}" href="{{ pageInfo.firstUrl }}"><i class="las la-angle-double-left"></i></a>
-{% endif %}
+{% for page, url in pageInfo.getPrevUrls() %}
+  <a class="{{ classPagination }}" href="{{ url }}">{{ page }}</a>
+{% endfor %}
 
-{% if pageInfo.prevUrl %}
-  <a class="{{ classPagination }}" href="{{ pageInfo.prevUrl }}"><i class="las la-angle-left"></i></a>
-{% endif %}
+<span class="px-4 py-2 border-2 border-yellow-500 font-bold rounded-md m-auto bg-yellow-500 text-black">{{ pageInfo.currentPage }}</span>
 
-{% if pageInfo.nextUrl %}
-  <a class="{{ classPagination }}" href="{{ pageInfo.nextUrl }}"><i class="las la-angle-right"></i></a>
-{% endif %}
-
-{% if pageInfo.firstUrl %}
-  <a class="{{ classPagination }}" href="{{ pageInfo.lastUrl }}"><i class="las la-angle-double-right"></i></a>
-{% endif %}
+{% for page, url in pageInfo.getNextUrls() %}
+  <a class="{{ classPagination }}" href="{{ url }}">{{ page }}</a>
+{% endfor %}

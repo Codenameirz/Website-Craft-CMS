@@ -14,13 +14,13 @@
   <div class="grid md:grid-cols-4 w-11/12 gap-x-12 gap-y-12 m-auto pt-4 pb-8">
     <div class="box-content bg-transparent text-white">
       <h1 class="font-bold text-center md:text-left text-yellow-500 md:text-lg border-b-2 border-yellow-500 pb-2">About</h1>
-      <div class="text-sm text-center md:text-left text-white md:text-base pt-2">{{ footer.richText }}</div>
+      <div class="text-base text-center md:text-left text-white pt-2">{{ footer.richText }}</div>
     </div>
     <div class="box-content bg-transparent text-white">
       <h1 class="font-bold text-center md:text-left text-yellow-500 md:text-lg border-b-2 border-yellow-500 pb-2">Menu</h1>
       <ul class="grid md:grid-cols-2 pt-2">
       {% for item in menuFooter %}
-        <li class="text-white text-center md:text-left"><a class="text-sm md:text-base hover:text-gray-400 hover:underline" href="{{ item.link }}">{{ item.menu }}</a></li>
+        <li class="text-white text-center md:text-left"><a class="text-base hover:text-gray-400 hover:underline" href="{{ item.link }}">{{ item.menu }}</a></li>
       {% endfor %}
       </ul>
     </div>
@@ -29,7 +29,7 @@
         <ul class="pt-2">
           {% set recent = craft.entries.section('games').limit(6).all() %}
           {% for item in recent %}
-            <li class="text-white text-center md:text-left"><a class="text-sm md:text-base hover:text-gray-400 hover:underline" href="{{ item.url }}">{{ item.title }}</a></li>
+            <li class="text-white text-center md:text-left"><a class="text-base hover:text-gray-400 hover:underline" href="{{ item.url }}">{{ item.title }}</a></li>
           {% endfor %}
         </ul>
     </div>

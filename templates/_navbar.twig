@@ -6,7 +6,7 @@
 %}
 
 <!--Navbar start-->
-<nav x-data="{ open: false }" class="flex flex-row h-16 w-full items-center justify-between fixed z-10" style="background-color: #111111;">
+<nav x-data="{ open: false }" class="flex flex-row h-16 w-full items-center justify-between fixed z-10 shadow-2xl" style="background-color: #111111;">
   <a class="text-yellow-500 text-lg font-bold mx-4 py-2 text-opacity-100 hover:text-opacity-50 transition duration-500" href="{{ base }}">infoGim</a>
   <button @click="open = !open" class="block md:hidden text-yellow-500 px-4 focus:outline-none">
     <i :class="{ 'las la-bars transform rotate-0 duration-500': open === false, 'las la-times transform rotate-180 scale-50 duration-500': open === true }" style="font-size: 36px;"></i>

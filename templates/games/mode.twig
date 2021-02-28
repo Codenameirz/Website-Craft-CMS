@@ -9,10 +9,10 @@
 {% block content %}
   <div class="py-24">
     <div class="flex flex-col h-full w-11/12 rounded-2xl m-auto p-12" style="background-color: #212121;">
-      <h1 class="text-white font-bold text-2xl text-center">Menampilkan semua mode game :</h1>
-      <div class="grid md:grid-cols-2 gap-x-8 gap-y-4 justify-center my-12">
+      <h1 class="text-white font-bold text-2xl text-center">Menampilkan semua mode yang ada pada game :</h1>
+      <div class="grid md:grid-cols-2 gap-x-8 gap-y-4 my-12">
         {% for item in categories %}
-          <a class="xl:h-12 xl:w-11/12 xl:p-2 xl:text-center xl:border-2 font-normal xl:font-bold rounded-md text-white hover:underline hover:text-gray-400 xl:hover:no-underline text-sm md:text-base border-white xl:hover:bg-white xl:hover:text-black m-auto" href="{{ item.url }}">{{ item }}</a>
+          <a class="h-12 w-11/12 p-2 text-center border-2 font-normal font-bold rounded-md text-white text-base border-white hover:bg-white hover:text-black m-auto" href="{{ item.url }}">{{ item }}</a>
         {% endfor %}
       </div>
     </div>
